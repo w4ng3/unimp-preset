@@ -1,0 +1,58 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    //主题
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "fira-code-material-icon-theme",
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 12,
+    "window.zoomLevel": 1,
+    // 这些文件将不会显示在工作空间中
+    "files.exclude": {
+      "**/.git": false,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/*.js": {
+        "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作区中
+      },
+      "**/node_modules": true
+    },
+    // 配置语言的文件关联
+    "files.associations": {
+      "*.nvue": "vue",
+      "pages.json": "jsonc", // pages.json 可以写注释
+      "manifest.json": "jsonc", // manifest.json 可以写注释
+      ".prettierrc.json": "jsonc"
+    },
+    "editor.formatOnSave": true,
+    "create-uniapp-view.style": "scss",
+    "create-uniapp-view.template": "vue3",
+    "minapp-vscode.cssExtname": "scss",
+    "minapp-vscode.wxmlExtname": "wxml",
+    "minapp-vscode.disableAutoConfig": true,
+    "minapp-vscode.decorateComplexInterpolation": false,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "uniapp-vscode.globalStyleFiles": ["./src/styles/global.scss"],
+    "uniapp-vscode.jsAutoApi": false,
+    "uniapp-vscode.jsAutoCompletion": false,
+    "uniapp-vscode.jsHover": false
+    // "minapp-vscode.globalStyleFiles": ["app.wxss", "style/base.wxss"],
+    // "minapp-vscode.wxmlFormatter": "wxml", // 指定格式化工具
+    // "minapp-vscode.wxmlFormatter": "prettier", // 指定格式化工具,
+    // "minapp-vscode.prettier": {
+    //   // prettier 更多参考 https://prettier.io/docs/en/options.html
+    //   "useTabs": false,
+    //   "tabWidth": 2,
+    //   "printWidth": 130,
+    //   "singleQuote": true,
+    //   "bracketSameLine": true,
+    //   "bracketSpacing": true
+    // }
+  }
+}

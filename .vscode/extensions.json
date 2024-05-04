@@ -1,0 +1,17 @@
+{
+  // 推荐的扩展插件
+  "recommendations": [
+    "mrmaoddxxaa.create-uniapp-view",
+    "evils.uniapp-vscode",
+    "Vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "wallabyjs.console-ninja",
+    "editorconfig.editorconfig",
+    "mrmlnc.vscode-scss",
+    "uni-helper.uni-ui-snippets-vscode",
+    "voorjaar.windicss-intellisense",
+    "qiu8310.minapp-vscode"
+  ]
+}
