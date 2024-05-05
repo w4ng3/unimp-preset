@@ -10,9 +10,9 @@ const avatar = computed(() => {
 })
 
 onShow(() => {
-  // UserApi.getUserInfo().then((res) => {
-  //   memberStore.profile = res.data
-  // })
+  UserApi.getUserInfo().then((res) => {
+    memberStore.profile = res.data
+  })
   getUnReadNum()
 })
 

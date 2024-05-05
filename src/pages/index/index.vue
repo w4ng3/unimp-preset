@@ -40,11 +40,7 @@ const getSwpierData = async () => {
 
 /** 帖子 */
 const postList = ref<any[]>([])
-const {
-  onLoadList: getPostsData,
-  pageNum: postPageNum,
-  loadState
-} = usePull2Refresh(postList, '/forum/postList')
+const { onLoadList: getPostsData, pageNum: postPageNum, loadState } = usePull2Refresh(postList, '/post/list')
 
 const tapLike = (id: number, isLiked: boolean, callback: Function) => {
   if (isLiked) {
