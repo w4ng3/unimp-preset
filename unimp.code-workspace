@@ -37,7 +37,7 @@
     "minapp-vscode.wxmlExtname": "wxml",
     "minapp-vscode.disableAutoConfig": true,
     "minapp-vscode.decorateComplexInterpolation": false,
-    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "editor.formatOnSaveMode": "file",
     "uniapp-vscode.globalStyleFiles": ["./src/styles/global.scss"],
     "uniapp-vscode.jsAutoApi": false,
     "uniapp-vscode.jsAutoCompletion": false,

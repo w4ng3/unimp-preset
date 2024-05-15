@@ -1,5 +1,5 @@
 <template>
-  <wd-config-provider theme="light" :theme-vars="themeVars">
+  <wd-config-provider theme="light">
     <view class="px-80">
       <wd-form ref="form" :model="model">
         <wd-toast />
@@ -47,7 +47,6 @@
 </template>
 
 <script lang="ts" setup>
-import { themeVars } from '@/styles/wotThemeVars'
 import { useToast } from 'wot-design-uni'
 const toast = useToast()
 /** 显示手机号 */

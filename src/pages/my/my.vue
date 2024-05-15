@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { themeVars } from '@/styles/wotThemeVars'
 // 获取屏幕边界到安全区域距离
 const { safeAreaInsets } = uni.getSystemInfoSync()
 // 获取会员信息
@@ -34,7 +33,7 @@ const getUnReadNum = async () => {
 </script>
 
 <template>
-  <wd-config-provider theme="light" :theme-vars="themeVars">
+  <wd-config-provider theme="light">
     <scroll-view class="viewport" scroll-y>
       <view class="mt-20 mb-60 relative" :style="{ paddingTop: safeAreaInsets!.top + 'px' }">
         <view class="flex px-30 gap-20">

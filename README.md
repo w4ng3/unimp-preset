@@ -26,12 +26,19 @@ pnpm run dev:wx
 
 # H5端
 pnpm run dev:h5
-
+```
 # App端
 需 HbuilderX 工具，运行到手机或模拟器
 
-
 3. 微信开发者工具导入 `/dist/dev/mp-weixin` 目录
+
+
+### 修改主题
+[主题变量清单查看此文件->WOT-DESIGN](https://github.com/Moonofweisheng/wot-design-uni/blob/master/src/uni_modules/wot-design-uni/components/common/abstracts/variable.scss)
+
+在`styles/wot-theme.scss`里配置了写默认值，如果需要配置多主题，可以将css变量定义在`.wot-theme-XXXX {}`类里，
+然后用wot-design的 `ConfigProvider`全局配置组件完成主题切换。
+
 
 ### 工程结构解析
 

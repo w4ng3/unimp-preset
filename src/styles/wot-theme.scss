@@ -1,12 +1,24 @@
 @import './mixin.scss';
 
+// 主题变量清单查看此文件：
+// https://github.com/Moonofweisheng/wot-design-uni/blob/master/src/uni_modules/wot-design-uni/components/common/abstracts/variable.scss
+:root,
+page {
+  --wot-color-theme: #2d77ff;
+  // --wot-color-success: #8076a3;
+  --wot-input-icon-size: '20px';
+  --wot-input-placeholder-color: '#f7f7f7';
+}
+
 // 亮色主题
 .wot-theme-light {
   .wd-cell {
     background-color: transparent !important;
+
     &__wrapper {
       align-items: center !important;
     }
+
     &:after {
       content: '';
       text-decoration: none;
@@ -16,38 +28,46 @@
       margin-left: 5%;
       border-bottom: rgba($color: $uni-border-color, $alpha: 0.7) 1rpx solid;
     }
+
     &:last-child:after {
       display: none;
     }
+
     &__body {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     &__left {
       display: flex;
       justify-content: center;
       align-items: center;
+
       .wd-icon__image {
         object-fit: contain;
         width: 40rpx;
         height: 40rpx;
       }
     }
+
     &__title {
       padding-left: 10rpx;
       padding-top: 10rpx;
       padding-bottom: 5rpx;
     }
+
     &__arrow-right {
       color: rgba($color: black, $alpha: 0.5) !important;
       scale: 1.2;
     }
   }
+
   .wd-input {
     @include glass-bg;
     border-radius: 20rpx;
     padding: 20rpx;
+
     .wd-input__placeholder {
       color: #9097a0 !important;
     }
@@ -56,54 +76,8 @@
 
 // 暗色主题
 .wot-theme-dark {
-  .wd-cell {
-    background-color: transparent !important;
-    &__wrapper {
-      align-items: center !important;
-    }
-    &:after {
-      content: '';
-      text-decoration: none;
-      position: absolute;
-      width: 90%;
-      left: 0;
-      margin-left: 5%;
-      border-bottom: rgba($color: $uni-border-color, $alpha: 0.7) 1rpx solid;
-    }
-    &:last-child:after {
-      display: none;
-    }
-    &__body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &__left {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .wd-icon__image {
-        object-fit: contain;
-        width: 40rpx;
-        height: 40rpx;
-      }
-    }
-    &__title {
-      padding-left: 10rpx;
-      padding-top: 10rpx;
-      padding-bottom: 5rpx;
-    }
-    &__arrow-right {
-      color: rgba($color: white, $alpha: 0.3) !important;
-      scale: 1.5;
-    }
-  }
-  .wd-input {
-    @include glass-bg;
-    border-radius: 20rpx;
-    padding: 20rpx;
-    .wd-input__placeholder {
-      color: #9eadbf !important;
-    }
+  body {
+    color: #f5f5f5;
+    background-color: black;
   }
 }

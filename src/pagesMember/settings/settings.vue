@@ -3,7 +3,6 @@
  *@author: 王東
  -->
 <script setup lang="ts">
-import { themeVars } from '@/styles/wotThemeVars'
 import { EnumAbout } from '@/config/enum'
 
 const memberStore = useMemberStore()
@@ -34,7 +33,7 @@ const openWxSetting = () => {
 </script>
 
 <template>
-  <wd-config-provider theme="light" :theme-vars="themeVars">
+  <wd-config-provider theme="light">
     <view class="py-20 px-30 px-20">
       <view class="">
         <wd-cell size="large" title="修改密码" is-link to="/pagesMember/settings/password" />

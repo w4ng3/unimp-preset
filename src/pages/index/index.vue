@@ -60,7 +60,6 @@ const ontapPost = (id: number) => {
 </script>
 
 <template>
-  <!-- <wd-config-provider theme="dark" :theme-vars="themeVars"></wd-config-provider> -->
   <view class="viewport">
     <!-- 自定义搜索栏 -->
     <custom-navbar></custom-navbar>
