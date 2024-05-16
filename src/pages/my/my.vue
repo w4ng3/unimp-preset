@@ -33,71 +33,69 @@ const getUnReadNum = async () => {
 </script>
 
 <template>
-  <wd-config-provider theme="light">
-    <scroll-view class="viewport" scroll-y>
-      <view class="mt-20 mb-60 relative" :style="{ paddingTop: safeAreaInsets!.top + 'px' }">
-        <view class="flex px-30 gap-20">
-          <navigator class="" url="/pagesMember/settings/settings" hover-class="none">
-            <image src="/static/icons/setting.png" class="h-60 w-60" mode="scaleToFill" />
-          </navigator>
-          <navigator class="relative" url="/pages/my/message" hover-class="none">
-            <view
-              v-if="noReadNum"
-              class="absolute bottom-1 right-1 p-5 rounded-1 bg-red-700 z-10 text-[20rpx] text-center"
-            >
-              {{ noReadNum }}
-            </view>
-            <image src="/static/icons/notice.png" class="h-60 w-60" mode="scaleToFill" />
-          </navigator>
-        </view>
+  <scroll-view class="viewport" scroll-y>
+    <view class="mt-20 mb-60 relative" :style="{ paddingTop: safeAreaInsets!.top + 'px' }">
+      <view class="flex px-30 gap-20">
+        <navigator class="" url="/pagesMember/settings/settings" hover-class="none">
+          <image src="/static/icons/setting.png" class="h-60 w-60" mode="scaleToFill" />
+        </navigator>
+        <navigator class="relative" url="/pages/my/message" hover-class="none">
+          <view
+            v-if="noReadNum"
+            class="absolute bottom-1 right-1 p-5 rounded-1 bg-red-700 z-10 text-[20rpx] text-center"
+          >
+            {{ noReadNum }}
+          </view>
+          <image src="/static/icons/notice.png" class="h-60 w-60" mode="scaleToFill" />
+        </navigator>
       </view>
-      <view class="h-80"> </view>
-      <section class="mx-24">
-        <view class="h-auto m-linear-box">
-          <section class="flex h-120 px-20" v-if="memberStore.profile">
-            <!-- 已登录 -->
-            <navigator url="/pagesMember/profile/profile" hover-class="none">
-              <image class="user-avatar" mode="aspectFill" :src="avatar"></image>
-            </navigator>
-            <view class="pl-10">
-              <view class="truncate text-xl text-white">
-                {{ memberStore.profile.nickname }}
-              </view>
-              <view class="text-md text-white">{{ memberStore.profile.phone }}</view>
+    </view>
+    <view class="h-80"> </view>
+    <section class="mx-24">
+      <view class="h-auto m-linear-box">
+        <section class="flex h-120 px-20" v-if="memberStore.profile">
+          <!-- 已登录 -->
+          <navigator url="/pagesMember/profile/profile" hover-class="none">
+            <image class="user-avatar" mode="aspectFill" :src="avatar"></image>
+          </navigator>
+          <view class="pl-10">
+            <view class="truncate text-xl text-white">
+              {{ memberStore.profile.nickname }}
             </view>
-          </section>
-          <section class="flex h-120 px-20" v-else>
-            <!-- 未登录 -->
-            <navigator url="/pages/login/login" hover-class="none">
-              <image
-                class="user-avatar"
-                style="filter: grayscale(100%)"
-                mode="aspectFill"
-                src="/static/images/default-a.png"
-              ></image>
-            </navigator>
-            <navigator url="/pages/login/login" class="pl-10">
-              <view class="truncate text-xl"> 未登录 </view>
-              <view class="text-md">点击登录账号</view>
-            </navigator>
-          </section>
-          <!-- 菜单-->
-          <section>
-            <wd-cell
-              size="large"
-              title="基本信息"
-              icon="/static/icons/base1.png"
-              is-link
-              to="/pagesMember/profile/profile"
-            />
-            <wd-cell size="large" title="我的发帖" is-link icon="/static/icons/base4.png" />
-            <wd-cell size="large" title="XX订单" is-link icon="/static/icons/base6.png" />
-            <wd-cell size="large" title="XX记录" is-link icon="/static/icons/base8.png" />
-          </section>
-        </view>
-      </section>
-    </scroll-view>
-  </wd-config-provider>
+            <view class="text-md text-white">{{ memberStore.profile.phone }}</view>
+          </view>
+        </section>
+        <section class="flex h-120 px-20" v-else>
+          <!-- 未登录 -->
+          <navigator url="/pages/login/login" hover-class="none">
+            <image
+              class="user-avatar"
+              style="filter: grayscale(100%)"
+              mode="aspectFill"
+              src="/static/images/default-a.png"
+            ></image>
+          </navigator>
+          <navigator url="/pages/login/login" class="pl-10">
+            <view class="truncate text-xl"> 未登录 </view>
+            <view class="text-md">点击登录账号</view>
+          </navigator>
+        </section>
+        <!-- 菜单-->
+        <section>
+          <wd-cell
+            size="large"
+            title="基本信息"
+            icon="/static/icons/base1.png"
+            is-link
+            to="/pagesMember/profile/profile"
+          />
+          <wd-cell size="large" title="我的发帖" is-link icon="/static/icons/base4.png" />
+          <wd-cell size="large" title="XX订单" is-link icon="/static/icons/base6.png" />
+          <wd-cell size="large" title="XX记录" is-link icon="/static/icons/base8.png" />
+        </section>
+      </view>
+    </section>
+  </scroll-view>
 </template>
 
 <style lang="scss">

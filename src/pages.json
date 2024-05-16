@@ -18,6 +18,18 @@
       }
     },
     {
+      "path": "pages/index/post-detail",
+      "style": {
+        "navigationBarTitleText": "详情"
+      }
+    },
+    {
+      "path": "pages/index/send-post",
+      "style": {
+        "navigationBarTitleText": "发帖"
+      }
+    },
+    {
       "path": "pages/index/search",
       "style": {
         "navigationBarTitleText": "搜索",

@@ -2,7 +2,7 @@
   <view class="navbar" :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
     <!-- logo文字 -->
     <view class="flex items-center h-64 pl-30 pt-20">
-      <image class="w-50 h-50" src="/static/images/logo.png"></image>
+      <image class="w-50 h-50" src="/static/images/wx.png"></image>
       <text class="logo-text">亲民 · 快捷 · 共享</text>
     </view>
     <!-- 搜索条 -->

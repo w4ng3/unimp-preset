@@ -24,9 +24,7 @@ const tapSwiper = (item: IadList.item) => {
   <view class="carousel">
     <swiper :circular="true" :autoplay="false" :interval="3000" @change="onChange">
       <swiper-item v-for="item in list" :key="item.adId">
-        <!-- <navigator :url="item.content" hover-class="none" class="navigator"> -->
         <image mode="aspectFill" class="image" :src="item.cover" @tap="tapSwiper(item)"></image>
-        <!-- </navigator> -->
       </swiper-item>
     </swiper>
     <!-- 指示点 -->

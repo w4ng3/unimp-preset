@@ -1,8 +1,9 @@
 <template>
   <wd-form ref="form" :model="model">
     <wd-toast />
-    <div style="height: 20rpx"></div>
+    <wd-gap></wd-gap>
     <wd-input label="已绑定手机号" v-model="phoneComputed" readonly label-width="90px" />
+    <wd-gap></wd-gap>
     <wd-cell-group border>
       <wd-input
         label="新手机号"
@@ -14,6 +15,7 @@
         placeholder="请输入要换绑的手机号"
         :rules="phoneRule"
       />
+      <wd-gap></wd-gap>
       <wd-input
         type="number"
         label="验证码"
@@ -30,7 +32,7 @@
         </template>
       </wd-input>
     </wd-cell-group>
-    <view class="px-24 pt-20">
+    <view class="pt-40 px-40">
       <wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
     </view>
   </wd-form>
@@ -102,4 +104,9 @@ const handleSubmit = () => {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+page {
+  background-color: $uni-bg-color-grey;
+  padding: 0 20rpx;
+}
+</style>

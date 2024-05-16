@@ -82,7 +82,7 @@
     </block>
     <!-- 底部信息 -->
     <view class="flex justify-between pt-5">
-      <view class="text-gray-400 text-sm">{{ timeCpt }}</view>
+      <view class="text-sm">{{ timeCpt }}</view>
       <view class="flex gap-20 text-sm text-blue-500">
         <view @click.stop="tapLike" class="flex items-center gap-10">
           <image

@@ -1,13 +1,13 @@
 <template>
   <wd-form ref="form" :model="model">
     <wd-toast />
-    <div style="height: 20rpx"></div>
+    <wd-gap></wd-gap>
     <wd-cell-group border>
       <wd-input
         type="number"
         label="手机号"
         :maxlength="11"
-        label-width="80px"
+        label-width="60px"
         prop="phone"
         v-model="model.phone"
         placeholder="请输入手机号"
@@ -17,9 +17,10 @@
         ]"
       >
       </wd-input>
+      <wd-gap></wd-gap>
       <wd-input
         label="密码"
-        label-width="80px"
+        label-width="60px"
         prop="password"
         :maxlength="20"
         show-password
@@ -33,7 +34,7 @@
       <navigator url="/pages/login/resetPassword" open-type="navigate">忘记密码 </navigator>
       <navigator url="/pages/login/loginByCode" open-type="navigate">验证码登录 </navigator>
     </view>
-    <view class="footer">
+    <view class="p-60">
       <wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
     </view>
   </wd-form>
@@ -110,9 +111,7 @@ const navigateTo = (url: string) => {
 <style lang="scss">
 page {
   background-color: $uni-bg-color-grey;
-}
-.footer {
-  padding: 80rpx;
+  padding: 0 20rpx;
 }
 
 .tips {

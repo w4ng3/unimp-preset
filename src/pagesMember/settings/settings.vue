@@ -33,45 +33,37 @@ const openWxSetting = () => {
 </script>
 
 <template>
-  <wd-config-provider theme="light">
-    <view class="py-20 px-30 px-20">
-      <view class="">
-        <wd-cell size="large" title="修改密码" is-link to="/pagesMember/settings/password" />
-        <wd-cell
-          size="large"
-          title="手机号"
-          is-link
-          to="/pagesMember/settings/phone"
-          :value="phoneComputed"
-        />
-        <div class="h-10"></div>
-        <wd-cell size="large" title="权限设置" is-link @click="openWxSetting" />
-        <div class="h-10"></div>
-        <wd-cell
-          size="large"
-          title="隐私协议"
-          is-link
-          :to="`/pagesMember/settings/about?type=${EnumAbout.Privacy}&title=隐私协议`"
-        />
-        <wd-cell
-          size="large"
-          title="用户协议"
-          is-link
-          :to="`/pagesMember/settings/about?type=${EnumAbout.User}&title=用户协议`"
-        />
-        <wd-cell
-          size="large"
-          title="关于我们"
-          is-link
-          :to="`/pagesMember/settings/about?type=${EnumAbout.About}&title=关于我们`"
-        />
-      </view>
-      <!-- 操作按钮 -->
-      <view class="px-30 pt-40">
-        <wd-button type="error" block size="large" @click="onLogout">退出登录</wd-button>
-      </view>
+  <view class="py-20 px-30 px-20">
+    <view class="">
+      <wd-cell size="large" title="修改密码" is-link to="/pagesMember/settings/password" />
+      <wd-cell size="large" title="手机号" is-link to="/pagesMember/settings/phone" :value="phoneComputed" />
+      <div class="h-10"></div>
+      <wd-cell size="large" title="权限设置" is-link @click="openWxSetting" />
+      <div class="h-10"></div>
+      <wd-cell
+        size="large"
+        title="隐私协议"
+        is-link
+        :to="`/pagesMember/settings/about?type=${EnumAbout.Privacy}&title=隐私协议`"
+      />
+      <wd-cell
+        size="large"
+        title="用户协议"
+        is-link
+        :to="`/pagesMember/settings/about?type=${EnumAbout.User}&title=用户协议`"
+      />
+      <wd-cell
+        size="large"
+        title="关于我们"
+        is-link
+        :to="`/pagesMember/settings/about?type=${EnumAbout.About}&title=关于我们`"
+      />
     </view>
-  </wd-config-provider>
+    <!-- 操作按钮 -->
+    <view class="px-30 pt-40">
+      <wd-button type="error" block size="large" @click="onLogout">退出登录</wd-button>
+    </view>
+  </view>
 </template>
 
 <style lang="scss"></style>

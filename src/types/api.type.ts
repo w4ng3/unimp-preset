@@ -52,6 +52,7 @@ declare module IadList {
     adId: number
     /** 类型（0：富文本 1：链接 2：帖子） */
     type: 0 | 1 | 2
+    cover: string
     title: string
     content: string
     timestamp: number

@@ -1,7 +1,7 @@
 <template>
   <wd-form ref="form" :model="model">
     <wd-toast />
-    <div style="height: 20rpx"></div>
+    <wd-gap></wd-gap>
     <wd-cell-group border>
       <wd-input
         type="number"
@@ -17,6 +17,7 @@
         ]"
       >
       </wd-input>
+      <wd-gap></wd-gap>
       <wd-input
         type="number"
         label="验证码"
@@ -33,7 +34,7 @@
         </template>
       </wd-input>
     </wd-cell-group>
-    <view class="footer">
+    <view class="p-60">
       <wd-button type="primary" size="large" @click="handleSubmit" block>登录</wd-button>
     </view>
   </wd-form>
@@ -133,10 +134,7 @@ const navigateTo = (url: string) => {
 <style lang="scss">
 page {
   background-color: $uni-bg-color-grey;
-}
-
-.footer {
-  padding: 80rpx;
+  padding: 0 20rpx;
 }
 
 .tips {

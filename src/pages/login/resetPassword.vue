@@ -1,7 +1,7 @@
 <template>
   <wd-form ref="form" :model="model">
     <wd-toast />
-    <div style="height: 20rpx"></div>
+    <wd-gap></wd-gap>
     <wd-cell-group border>
       <wd-input
         type="number"
@@ -17,6 +17,7 @@
         ]"
       >
       </wd-input>
+      <wd-gap></wd-gap>
       <wd-input
         type="number"
         label="验证码"
@@ -32,6 +33,7 @@
           <wd-button @click="sendCode" size="medium" :disabled="countDown !== 60">{{ codeBtnStr }}</wd-button>
         </template>
       </wd-input>
+      <wd-gap></wd-gap>
       <wd-input
         label="密码"
         label-width="80px"
@@ -43,6 +45,7 @@
         placeholder="请输入密码"
         :rules="passRule"
       />
+      <wd-gap></wd-gap>
       <wd-input
         label="确认密码"
         label-width="80px"
@@ -55,7 +58,7 @@
         :rules="[{ required: true, message: '两次密码输入不一致', validator: validatorPass }]"
       />
     </wd-cell-group>
-    <view class="footer">
+    <view class="p-60">
       <wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
     </view>
   </wd-form>
@@ -142,9 +145,6 @@ const handleSubmit = () => {
 <style lang="scss">
 page {
   background-color: $uni-bg-color-grey;
-}
-
-.footer {
-  padding: 80rpx;
+  padding: 0 20rpx;
 }
 </style>

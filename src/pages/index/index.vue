@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import CustomNavbar from './comps/custom-navbar.vue'
-import CustomSwiper from './comps/custom-swiper.vue'
+import CustomNavbar from './widgets/custom-navbar.vue'
+import CustomSwiper from './widgets/custom-swiper.vue'
 
 // 页面加载请求数据
 onLoad(async () => {
@@ -73,6 +73,7 @@ const ontapPost = (id: number) => {
       @scrolltolower="onScrolltolower"
     >
       <custom-swiper :list="swiperList"></custom-swiper>
+      <wd-gap></wd-gap>
       <!-- 帖子 List -->
       <block v-for="post in postList" :key="post.postId">
         <PostCard @tapLike="tapLike" @tap="ontapPost(post.postId)" :post="post"></PostCard>
@@ -84,6 +85,9 @@ const ontapPost = (id: number) => {
 </template>
 
 <style lang="scss">
+page {
+  height: 100%;
+}
 :deep(.wd-loadmore__text) {
   color: white;
 }

@@ -1,49 +1,45 @@
 <template>
-  <wd-config-provider theme="light">
-    <view class="px-80">
-      <wd-form ref="form" :model="model">
-        <wd-toast />
-        <wd-gap></wd-gap>
-        <wd-input :maxlength="11" no-border readonly v-model="phoneComputed" prefix-icon="phone"> </wd-input>
-        <wd-gap></wd-gap>
-        <view class="flex gap-20">
-          <wd-input
-            type="number"
-            :maxlength="10"
-            no-border
-            prefix-icon="code"
-            prop="code"
-            v-model="model.code"
-            placeholder="请输入验证码"
-            :rules="codeRule"
-          >
-          </wd-input>
-          <wd-button
-            custom-style="border-radius: 10rpx; height:90rpx"
-            @click="sendCode"
-            :disabled="countDown !== 60"
-          >
-            {{ codeBtnStr }}
-          </wd-button>
-        </view>
-        <wd-gap></wd-gap>
-        <wd-input
-          prefix-icon="lock-on"
-          no-border
-          prop="password"
-          :maxlength="20"
-          show-password
-          clearable
-          v-model="model.password"
-          placeholder="请输入密码"
-          :rules="passwordRule"
-        />
-        <view class="mt-50">
-          <wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
-        </view>
-      </wd-form>
+  <wd-form ref="form" :model="model">
+    <wd-toast />
+    <wd-gap></wd-gap>
+    <wd-input :maxlength="11" no-border readonly v-model="phoneComputed" prefix-icon="phone"> </wd-input>
+    <wd-gap></wd-gap>
+    <view class="flex gap-20">
+      <wd-input
+        type="number"
+        :maxlength="10"
+        no-border
+        prefix-icon="code"
+        prop="code"
+        v-model="model.code"
+        placeholder="请输入验证码"
+        :rules="codeRule"
+      >
+      </wd-input>
+      <wd-button
+        custom-style="border-radius: 10rpx; height:90rpx"
+        @click="sendCode"
+        :disabled="countDown !== 60"
+      >
+        {{ codeBtnStr }}
+      </wd-button>
     </view>
-  </wd-config-provider>
+    <wd-gap></wd-gap>
+    <wd-input
+      prefix-icon="lock-on"
+      no-border
+      prop="password"
+      :maxlength="20"
+      show-password
+      clearable
+      v-model="model.password"
+      placeholder="请输入密码"
+      :rules="passwordRule"
+    />
+    <view class="mt-50">
+      <wd-button type="primary" size="large" @click="handleSubmit" block>提交</wd-button>
+    </view>
+  </wd-form>
 </template>
 
 <script lang="ts" setup>
@@ -113,4 +109,9 @@ const handleSubmit = () => {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+page {
+  background-color: $uni-bg-color-grey;
+  padding: 0 20rpx;
+}
+</style>
