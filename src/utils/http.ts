@@ -32,8 +32,8 @@ const httpInterceptor = {
     // options.data = {
     //   timestamp: Date.now(),
     //   clientType: 2,
-    //   apiVer: import.meta.env.API_VER || 'v1.0.0',
-    //   clientVer: import.meta.env.CLIENT_VER || 'v1.0.0',
+    //   apiVer: import.meta.env.VITE_API_VER || 'v1.0.0',
+    //   clientVer: import.meta.env.VITE_CLIENT_VER || 'v1.0.0',
     //   token: memberStore.profile?.userToken ?? '',
     //   body: options.data
     // }
