@@ -11,7 +11,12 @@ defineProps<{
 
 const tapSwiper = (item: IadList.item) => {
   if (item.type === 0) {
-    uni.navigateTo({ url: `/pages/web/rich?content=${JSON.stringify(item.content)}&title=${item.title}` })
+    uni.navigateTo({
+      url: `/pages/web/rich?title=${item.title}`,
+      success: (res) => {
+        res.eventChannel.emit('rich-text', item.content)
+      }
+    })
   } else if (item.type === 1) {
     uni.navigateTo({ url: `/pages/web/web?url=${encodeURIComponent(item.content)}&title=${item.title}` })
   } else if (item.type === 2) {

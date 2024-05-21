@@ -61,5 +61,6 @@
     "（": true,
     "）": true
   },
-  "editor.formatOnSaveMode": "file"
+  "editor.formatOnSaveMode": "file",
+  "diffEditor.wordWrap": "off"
 }

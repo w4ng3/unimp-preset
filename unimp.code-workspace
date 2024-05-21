@@ -41,7 +41,8 @@
     "uniapp-vscode.globalStyleFiles": ["./src/styles/global.scss"],
     "uniapp-vscode.jsAutoApi": false,
     "uniapp-vscode.jsAutoCompletion": false,
-    "uniapp-vscode.jsHover": false
+    "uniapp-vscode.jsHover": false,
+    "diffEditor.wordWrap": "off"
     // "minapp-vscode.globalStyleFiles": ["app.wxss", "style/base.wxss"],
     // "minapp-vscode.wxmlFormatter": "wxml", // 指定格式化工具
     // "minapp-vscode.wxmlFormatter": "prettier", // 指定格式化工具,

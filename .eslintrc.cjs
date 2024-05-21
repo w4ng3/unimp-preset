@@ -26,7 +26,15 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest'
   },
-  ignorePatterns: ['/node_modules/*', '/dist/', '/dist*', '/build/', '/*.js', '/src/types/'],
+  ignorePatterns: [
+    '/node_modules/*',
+    '/dist/',
+    '/dist*',
+    '/build/',
+    '/*.js',
+    '/src/types/',
+    '/src/components/uv-parse'
+  ],
   rules: {
     'prettier/prettier': [
       'warn',

@@ -5,30 +5,33 @@
 </template>
 
 <script lang="ts" setup>
-import type { EnumAbout } from '@/config/enum'
 import uvParse from '@/components/uv-parse/uv-parse.vue'
 
-// 页面参数
 const query = defineProps<{
-  type: EnumAbout
   title: string
 }>()
+const richText = ref('')
 
-const richText = ref<string>('<div></div>')
+onLoad(() => {
+  uni.setNavigationBarTitle({ title: query.title })
+  const _this = getCurrentInstance()
+  // #ifdef MP-WEIXIN
+  // @ts-ignore #小程序有效，h5无法运行
+  const eventChannel = _this.ctx.getOpenerEventChannel()
+  eventChannel.on('rich-text', (data: string) => {
+    richText.value = data
+  })
+  // #endif
+})
+
 const style = {
   p: 'color:white',
   img: 'border-radius: 20rpx;width: 100%;margin-top: 10rpx;display: block;'
 }
-
-onLoad(() => {
-  uni.setNavigationBarTitle({ title: query.title || '关于' })
-  // CommonApi.getPlicy({ type: query.type }).then((res) => {
-  //   richText.value = res.data.content
-  // })
-})
 </script>
 
 <style lang="scss">
+// 统一设置全文样式
 .uv-content {
   padding: 20rpx;
   color: white;

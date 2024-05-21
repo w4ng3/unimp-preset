@@ -9,6 +9,8 @@ uniapp_微信小程序预设模版
 - 组件库：[uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html) 官方组件
 - 组件库： [wot-design-uni](https://wot-design-uni.gitee.io/) （vue3 + TS）推荐
 
+> 单独引入了一个 `UV-UI` 的富文本解析器`components/uv-parse`,可查看组件介绍：https://www.uvui.cn/components/parse.html
+
 ## 运行程序
 
 1. 安装依赖

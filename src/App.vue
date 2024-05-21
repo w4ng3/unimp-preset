@@ -20,10 +20,10 @@ onHide(() => {
 </script>
 
 <style lang="scss">
-// 字体图标
-@import '@/styles/fonts.scss';
 // 全局样式
 @import '@/styles/global.scss';
 // wot-design 组件自定义样式
 @import '@/styles/wot-theme.scss';
+// iconfont- unicode 单色-字体图标
+@import '@/styles/iconfont.css';
 </style>
