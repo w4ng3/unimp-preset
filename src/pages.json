@@ -46,7 +46,11 @@
     {
       "path": "pages/shop/shop",
       "style": {
-        "navigationBarTitleText": "商城"
+        "navigationBarTitleText": "商城",
+        "usingComponents": {
+          "wd-tag": "/wxcomponents/wd-tag/wd-tag",
+          "news-card": "/wxcomponents/news_card/news_card"
+        }
       }
     },
     {

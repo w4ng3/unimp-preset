@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const tagList = ['社会化抚养', '法笑']
+const onMyEvent = (e: UniHelper.TouchEvent) => {
+  console.log('onMyEvent :>> ', e.target)
+}
+</script>
 
 <template>
   <view>
@@ -11,6 +16,9 @@
     <wd-icon class-prefix="icon" name="home" />
     <wd-icon class-prefix="icon" name="down" size="300rpx" color="#f00" />
   </view>
+  <!-- #ifdef MP-WEIXIN -->
+  <news-card imageUrl="" title="睡前消息暑期版" date="2023-6-25" :tags="tagList" @myevent="onMyEvent" />
+  <!-- #endif -->
 </template>
 
 <style lang="scss">
