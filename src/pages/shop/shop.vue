@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { safeAreaInsets } = uni.getSystemInfoSync()
+
 const tagList = ['社会化抚养', '法笑']
 const onMyEvent = (e: UniHelper.TouchEvent) => {
   console.log('onMyEvent :>> ', e.target)
@@ -6,15 +8,18 @@ const onMyEvent = (e: UniHelper.TouchEvent) => {
 </script>
 
 <template>
-  <view>
-    <wd-button>主要按钮</wd-button>
-    <wd-button type="success">成功按钮</wd-button>
-    <wd-button type="warning">警告按钮</wd-button>
-  </view>
-  <view class="my-iconf flex">
-    <view class="icon icon-brightness1"></view>
-    <wd-icon class-prefix="icon" name="home" />
-    <wd-icon class-prefix="icon" name="down" size="300rpx" color="#f00" />
+  <view :style="{ paddingTop: safeAreaInsets!.top + 10 + 'px' }">
+    <wd-navbar title="标题"></wd-navbar>
+    <view class="flex flex-row">
+      <wd-button>主要按钮</wd-button>
+      <wd-button type="success">成功按钮</wd-button>
+      <wd-button type="warning">警告按钮</wd-button>
+    </view>
+    <view class="my-iconf flex">
+      <view class="icon icon-brightness1"></view>
+      <wd-icon class-prefix="icon" name="home" />
+      <wd-icon class-prefix="icon" name="down" size="300rpx" color="#f00" />
+    </view>
   </view>
   <!-- #ifdef MP-WEIXIN -->
   <news-card imageUrl="" title="睡前消息暑期版" date="2023-6-25" :tags="tagList" @myevent="onMyEvent" />

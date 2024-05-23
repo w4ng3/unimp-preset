@@ -14,7 +14,9 @@
       "style": {
         "navigationBarTitleText": "首页",
         "navigationStyle": "custom",
-        "navigationBarTextStyle": "white"
+        "navigationBarTextStyle": "white",
+        "renderer": "skyline",
+        "componentFramework": "glass-easel"
       }
     },
     {
@@ -47,6 +49,9 @@
       "path": "pages/shop/shop",
       "style": {
         "navigationBarTitleText": "商城",
+        "navigationStyle": "custom",
+        "renderer": "skyline",
+        "componentFramework": "glass-easel",
         "usingComponents": {
           "wd-tag": "/wxcomponents/wd-tag/wd-tag",
           "news-card": "/wxcomponents/news_card/news_card"

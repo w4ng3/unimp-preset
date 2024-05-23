@@ -2,7 +2,7 @@
   <view class="navbar" :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
     <!-- logo文字 -->
     <view class="flex items-center h-64 pl-30 pt-20">
-      <image class="w-50 h-50" src="/static/images/wx.png"></image>
+      <image class="w-[50rpx] h-[50rpx]" src="/static/images/wx.png"></image>
       <text class="logo-text">亲民 · 快捷 · 共享</text>
     </view>
     <!-- 搜索条 -->
@@ -32,8 +32,10 @@ const toggleSearch = () => {
 /* 自定义导航条 */
 .navbar {
   background-color: pink;
-  @apply flex flex-col pt-20;
+  // @apply flex flex-col pt-20;
   background-size: cover;
+  display: flex;
+  flex-direction: row;
   .logo-text {
     flex: 1;
     line-height: 28rpx;

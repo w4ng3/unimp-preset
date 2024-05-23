@@ -65,6 +65,7 @@ const ontapPost = (id: number) => {
     <custom-navbar></custom-navbar>
     <!-- 滚动容器 -->
     <scroll-view
+      type="list"
       refresher-enabled
       scroll-y
       class="scroll-view"
