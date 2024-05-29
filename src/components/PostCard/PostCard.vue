@@ -1,5 +1,5 @@
 <!--
- *@FileDescription: 帖子组件
+ *@FileDescription: 帖子
  *@author: 王東
  *@date: 2024-03-14
  -->
@@ -7,16 +7,17 @@
   <view class="post-card h-auto p-20 relative">
     <view class="flex">
       <wd-img
-        width="110rpx"
-        height="110rpx"
+        width="100rpx"
+        height="100rpx"
         mode="aspectFill"
         radius="20rpx"
-        :src="!!post.userInfo.avatar ? post.userInfo.avatar : '/static/images/post-default.png'"
+        :src="post.userInfo?.avatar ? avatar : '/static/images/default-a.png'"
+        @error="handleErrorAvatar"
       />
       <view class="pl-20">
-        <view class="font-bold m-color text-xl">{{ post.userInfo?.nickname }}</view>
+        <view class="font-bold m-color text-[16px] mb-10">{{ post.userInfo?.nickname }}</view>
         <block v-for="(tag, index) in tagList" :key="index">
-          <text class="pr-10 m-color text-md">{{ tag }}</text>
+          <text class="pr-10 m-color text-[14px]">#{{ tag }}</text>
         </block>
       </view>
     </view>
@@ -41,7 +42,7 @@
               class="w-full h-full rounded-md"
               mode="aspectFill"
               :src="res.url"
-              @click.stop="onTapImage(res.url)"
+              @click.stop="onTapMedia(index)"
             ></image>
           </block>
           <block v-else-if="res.type === 1">
@@ -53,7 +54,7 @@
               :show-center-play-btn="false"
               :poster="res.videoCoverUrl"
             />
-            <view class="absolute top-0 left-0 video-mask">
+            <view class="absolute top-0 left-0 video-mask" @click.stop="onTapMedia(index)">
               <wd-icon name="play-circle" size="84rpx" color="white"></wd-icon>
             </view>
           </block>
@@ -82,7 +83,7 @@
     </block>
     <!-- 底部信息 -->
     <view class="flex justify-between pt-5">
-      <view class="text-sm">{{ timeCpt }}</view>
+      <view class="text-gray-400 text-sm">{{ timeCpt }}</view>
       <view class="flex gap-20 text-sm text-blue-500">
         <view @click.stop="tapLike" class="flex items-center gap-10">
           <image
@@ -114,6 +115,12 @@ const props = defineProps<Props>()
 const emit = defineEmits<{
   (e: 'tapLike', id: number, isLiked: boolean, callback: Function): void
 }>()
+
+const avatar = ref(props.post.userInfo.avatar)
+const handleErrorAvatar = () => {
+  avatar.value = '/static/images/default-a.png'
+}
+
 // 点赞
 const isLiked = ref(!!props.post.isLike)
 const likeNum = ref(props.post.likeNumber)
@@ -141,10 +148,16 @@ const gNum = computed(() => {
   return num
 })
 
-const onTapImage = (url: string) => {
-  uni.previewImage({
-    current: url,
-    urls: props.post.resourceList.filter((item) => item.type === 0).map((item) => item.url)
+const onTapMedia = (index: number) => {
+  uni.previewMedia({
+    sources: props.post.resourceList.map((item) => {
+      return {
+        url: item.url,
+        type: item.type ? 'video' : 'image',
+        poster: item.videoCoverUrl
+      }
+    }),
+    current: index
   })
 }
 
@@ -184,7 +197,7 @@ const commentNumCpt = computed(() => {
   padding-right: 20rpx !important;
 }
 /** 枚举九宫格布局，适配 1、2、3、4张图的布局（>4则用3）*/
-@each $num, $clo, $h in (1, 1, 300rpx), (2, 2, 160rpx), (3, 3, 140rpx), (4, 2, 200rpx) {
+@each $num, $clo in (1, 1), (2, 2), (3, 3), (4, 2) {
   .g-container-#{$num} {
     display: grid;
     grid-template-columns: repeat($clo, 1fr);
@@ -192,10 +205,13 @@ const commentNumCpt = computed(() => {
     row-gap: 10rpx;
   }
   .g-item-#{$num} {
-    height: $h;
+    aspect-ratio: 1 / 1;
     background-color: #f0f0f0;
     border-radius: 16rpx;
     overflow: hidden;
+  }
+  .g-item-1 {
+    aspect-ratio: 2/1 !important;
   }
 }
 

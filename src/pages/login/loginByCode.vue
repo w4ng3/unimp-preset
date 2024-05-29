@@ -73,7 +73,7 @@ const countDownTimer = () => {
 }
 
 const sendCode = () => {
-  if (!isPhone(model.phone!)) {
+  if (!$u.isPhone(model.phone!)) {
     toast.error('请输入正确的手机号')
   } else if (countDown.value === 60) {
     countDownTimer()

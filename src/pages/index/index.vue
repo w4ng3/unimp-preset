@@ -45,11 +45,11 @@ const { onLoadList: getPostsData, pageNum: postPageNum, loadState } = usePull2Re
 const tapLike = (id: number, isLiked: boolean, callback: Function) => {
   if (isLiked) {
     // 取消点赞
-    ForumApi.like({ postId: id, isLike: 0 })
+    PostApi.like({ postId: id, isLike: 0 })
     callback()
   } else {
     // 点赞
-    ForumApi.like({ postId: id, isLike: 1 })
+    PostApi.like({ postId: id, isLike: 1 })
     callback()
   }
 }

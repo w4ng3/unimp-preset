@@ -89,7 +89,7 @@ const sendPost = async () => {
     resourceJson
   }
 
-  await ForumApi.addPost(dto)
+  await PostApi.addPost(dto)
   setTimeout(() => {
     uni.navigateBack()
     uni.showToast({
