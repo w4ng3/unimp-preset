@@ -25,7 +25,7 @@ export default (list: Ref<any[]>, url: string, data?: any, startPage: number = 0
         list.value = pn === startPage ? respList : list.value.concat(respList)
         uni.hideLoading()
         uni.stopPullDownRefresh()
-        if (list.value.length < pageSize) {
+        if (respList.length < pageSize) {
           // console.log('没有更多了 :>> ')
           loadState.value = 'finished'
         } else {
