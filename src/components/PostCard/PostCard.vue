@@ -149,6 +149,7 @@ const gNum = computed(() => {
 })
 
 const onTapMedia = (index: number) => {
+  // #ifdef MP-WEIXIN
   uni.previewMedia({
     sources: props.post.resourceList.map((item) => {
       return {
@@ -159,6 +160,7 @@ const onTapMedia = (index: number) => {
     }),
     current: index
   })
+  // #endif
 }
 
 /** 底部栏数据格式化 */

@@ -4,6 +4,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/rollup'
 import AutoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
+import tailwindcss from 'tailwindcss'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -34,7 +35,12 @@ export default defineConfig({
       // 指定文件夹位置， 加 /** 可遍历子目录
       dirs: ['src/hooks/**', 'src/stores', 'src/utils', 'src/api/**']
     })
-  ]
+  ],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()]
+    }
+  }
   // server: {
   //   port: 1314,
   //   // 选项写法

@@ -12,6 +12,7 @@ onLaunch(() => {
   // #endif
 })
 onShow(() => {
+  // #ifdef MP-WEIXIN
   const updateManager = uni.getUpdateManager()
   updateManager.onCheckForUpdate(function (res) {
     // 请求完新版本信息的回调
@@ -31,7 +32,6 @@ onShow(() => {
       }
     })
   })
-
   updateManager.onUpdateFailed(function (_res) {
     // 新的版本下载失败
     uni.showModal({
@@ -40,6 +40,7 @@ onShow(() => {
       confirmText: '知道了'
     })
   })
+  // #endif
 })
 onHide(() => {
   // console.log('App Hide')
