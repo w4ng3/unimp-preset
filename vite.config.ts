@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
-import WindiCSS from 'vite-plugin-windicss'
 import MiniProgramTailwind from '@dcasia/mini-program-tailwind-webpack-plugin/rollup'
 import AutoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
@@ -22,7 +21,6 @@ export default defineConfig({
   },
   plugins: [
     uni(),
-    WindiCSS(),
     MiniProgramTailwind(),
     AutoImport({
       include: [
