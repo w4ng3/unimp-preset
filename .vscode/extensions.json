@@ -11,7 +11,7 @@
     "editorconfig.editorconfig",
     "mrmlnc.vscode-scss",
     "uni-helper.uni-ui-snippets-vscode",
-    "voorjaar.windicss-intellisense",
-    "qiu8310.minapp-vscode"
+    "qiu8310.minapp-vscode",
+    "bradlc.vscode-tailwindcss"
   ]
 }
