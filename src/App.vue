@@ -54,4 +54,11 @@ onHide(() => {
 @import '@/styles/wot-theme.scss';
 // iconfont- unicode 单色-字体图标
 @import '@/styles/iconfont.css';
+
+/* #ifdef H5 */
+body {
+  max-width: 430px;
+  margin: auto;
+}
+/* #endif */
 </style>

@@ -83,7 +83,8 @@ const onSubmit = async () => {
   <view class="viewport">
     <!-- 导航栏 -->
     <view class="navbar" :style="{ paddingTop: safeAreaInsets?.top + 'px' }">
-      <navigator open-type="navigateBack" class="back icon-left" hover-class="none"></navigator>
+      <!-- <wd-icon class-prefix="icon" name="back" size="80rpx" color="#fff" /> -->
+      <navigator open-type="navigateBack" class="icon icon-back back" hover-class="none"></navigator>
       <view class="title">个人信息</view>
     </view>
     <!-- 头像 -->
@@ -183,7 +184,7 @@ page {
     height: 40px;
     width: 40px;
     left: 0;
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
     display: flex;
     justify-content: center;

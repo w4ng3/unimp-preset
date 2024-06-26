@@ -10,7 +10,7 @@
     "build:wx": "uni build -p mp-weixin --mode pro",
     "tsc": "vue-tsc --noEmit --skipLibCheck",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "prepare": "husky install",
+    "prepare": "husky",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
